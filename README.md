@@ -1,1 +1,4 @@
 # gosol
+
+## Testing
+go test ./...

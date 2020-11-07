@@ -15,11 +15,6 @@ type FileReader struct {
 	reader        bufio.Reader
 }
 
-type Reader interface {
-	Next() string
-	HasNext() bool
-}
-
 func (fileReader *FileReader) HasNext() bool {
 	bytes, _ := fileReader.reader.Peek(1)
 	return len(bytes) > 0
