@@ -6,7 +6,6 @@ import (
 
 func isPalindrome(s string) bool {
 	string := strings.ReplaceAll(s, " ", "")
-	println(string)
 	return string == reverse(string)
 }
 
@@ -27,4 +26,17 @@ func getMidIndex(length int) int {
 		return mid
 	}
 	return mid + 1
+}
+
+func isPalindrome2(input string) bool {
+	s := strings.ReplaceAll(input, " ", "")
+	n := len(s) - 1
+	mid := getMidIndex(n)
+
+	for i := 0; i < mid; i++ {
+		if s[i] != s[n-i] {
+			return false
+		}
+	}
+	return true
 }

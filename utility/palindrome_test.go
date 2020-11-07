@@ -40,7 +40,31 @@ func TestPalindrome(t *testing.T) {
 	t.Run("Incorrect palindrome", func(t *testing.T) {
 		const string = "michael"
 		if isPalindrome(string) {
+			t.Error(string, " should not be palindrome")
+		}
+	})
+}
+
+func TestPalindrome2(t *testing.T) {
+
+	t.Run("Correct palindrome ", func(t *testing.T) {
+		const string = "anna"
+		if !isPalindrome2(string) {
 			t.Error(string, " should be palindrome")
+		}
+	})
+
+	t.Run("Correct palindrome sentence", func(t *testing.T) {
+		const string = "eco vana voce"
+		if !isPalindrome2(string) {
+			t.Error(string, " should be palindrome")
+		}
+	})
+
+	t.Run("Incorrect palindrome", func(t *testing.T) {
+		const string = "michael"
+		if isPalindrome2(string) {
+			t.Error(string, " should not be palindrome")
 		}
 	})
 }
